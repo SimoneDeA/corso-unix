@@ -1,0 +1,95 @@
+Sintassi dei comandi UNIX
+=========================
+
+Uno dei comandi piu' importanti (collocato in /bin) e' il
+comando "ls" (list), ed e' l'equivalente del comando DOS "dir".
+
+Argomenti di un comando
+-------------------------
+
+La sintassi del comando ls, ma anche quella di tutti gli altri
+comandi, segue una regola ben precisa:
+	
+		# nome_comando argomenti ...
+
+Gli "argomenti" sono delle stringhe che si appongono, separate
+da spazi, dopo il nome del comando stesso.
+Essi possono essere "obbligatori" o "facoltativi".
+
+Per indicare che un argomento e' facoltativo, in genere, nella
+documentazione del comando, lo troviamo racchiuso tra 
+parentesi quadre [...].
+
+Oltre a questa suddivisione, ve ne e' un altra: un argomento
+puo' essere di tipo "opzione" (switch) o di tipo "dato".
+Quelli di tipo "opzione" vengono prima di quelli di tipo "dato", ed
+iniziano sempre con in "-", qualche volta con "--" 
+
+
+Esempi:
+--------------
+
+	# ls -l /bin
+
+Qui abbiamo richiesto la lista (ls) della directory /bin, specificando
+che vogliamo il formato lungo (-l, long).
+
+	# ls -F /bin /usr/bin
+
+Qui vogliamo la lista di due directory, specificando il formato
+su piu' colonne (-F).
+
+	# ls --sort=time /bin
+
+Qui vogliamo che la lista sia ordina in base alla data di creazione.
+
+	# ls -R /
+
+Qui abbiamo richiesto la lista della directory radice (/), specificando
+che vogliamo una lista ricorsiva (-R), cioe' di tutte le sottodirectory.
+In pratica, in questo caso, avremo la lista di TUTTI i files 
+presenti nel sistema
+
+	# ls -l
+
+Qui abbiamo omesso il nome della directory. In questo caso, il
+comando assume che vogliamo listare la "directory corrente", cioe'
+quella dove ci troviamo quando abbiamo battuto il comando.
+
+	# ls -a
+
+Mostra tutti (-a, all) i files, anche quelli nascosti.
+
+
+Combinare switch
+-----------------
+
+	# ls -laR
+
+In questo caso chiediamo la lista completa, ricorsiva, di tutti i files,
+dalla directory corrente a scendere giu'.
+
+
+Paradigma di un comando
+-----------------------
+
+Come in latino, anche i comandi UNIX hanno quello che possiamo
+chiamare "paradigma"; in sostanza, una breve illustrazione di
+come usare il comando (in inglese: sinopsis)
+
+Per il comando "ls" il paradigma e' del tipo:
+
+		# ls [-laFR ...] [directory o files]
+
+Con questa scrittura si vuol significare che sia gli switch che
+i dati sono facoltativi, e che alcuni degli switch piu'
+usati sono: -l, -a etc
+
+
+Nota finale
+-----------
+
+Il comando "ls" ha circa 200-300 switch diverse!
+Io ho illustrato solo le piu' usate.
+
+

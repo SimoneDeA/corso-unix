@@ -1,0 +1,10 @@
+#!/bin/sh
+
+i=0
+while [ $i -lt 20 ] ; do
+    resto=$(expr $i % 2)
+    if [ $resto = 0 ] ; then
+    echo $i
+    fi
+    i=$(expr $i + 1)
+done

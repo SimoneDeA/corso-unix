@@ -1,0 +1,13 @@
+#!/bin/sh
+# demo "md5sum" 
+
+echo "Dimostrazione funzioni hash."
+echo
+
+
+
+echo "Checksum del file originale INFERNO, Canto I:"
+cat comedia.txt| md5sum 
+
+echo "Checksum, dopo l'aggiunta di un 1 in fondo al canto:"
+(cat comedia.txt; echo 1) | md5sum -

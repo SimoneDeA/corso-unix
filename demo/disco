@@ -1,0 +1,12 @@
+#!/bin/sh
+# programma dimostrativo
+# sugli script di shell in Linux
+# scritto da me medesimo :)
+
+
+#----------------------
+# Utilizzo disco
+#----------------------
+
+
+echo "AHO, nella cartella $(pwd) c'hai ben $(du -h) di monnezza, fiondane un po'!"

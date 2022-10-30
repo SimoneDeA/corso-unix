@@ -1,0 +1,98 @@
+Programmazione
+Gli scripts di shell
+===========================
+
+
+Esattamente come coi .bat del DOS, anche
+in UNIX e' possibile raccogliere un insieme
+collaudato di comandi dentro un file, e
+chiamarlo "programma", o meglio "script".
+
+Uno script e', quindi, un programma interpretato 
+dalla Shell di UNIX, che e' l'interprete con cui
+si dialoga quando si e' connessi.
+
+La shell e' essa stessa un programma: per la precisione
+si tratta del programma /bin/sh.
+
+Creazione dello script
+-------------------------
+
+E' molto facile. Basta aprire un file con l'editor
+e fare in modo che la prima linea sia questa
+
+		#!/bin/sh
+
+Le righe seguenti conterranno i vostri comandi, ma anche
+dei commenti, preceduti dal carattere speciale #
+
+
+Rendere eseguibile uno script
+-----------------------------
+
+Affinche' uno script sia "lanciabile", deve avere
+i permessi di esecuzione. Supponiamo che lo script si
+chiami "stat". Per dargli il permesso devo battere:
+
+		# chmod +x stat
+
+Lanciare uno script
+---------------------
+
+Lo script, appena creato, entra a far parte dei comandi
+di UNIX. Basta entrare nella directory dove si trova
+lo script e battere:
+
+		# stat
+
+(lanciamo cosi' il comando "stat").
+
+
+Argomenti di uno script
+-----------------------------------
+
+Come per gli altri comandi UNIX, anche i nostri script
+possono avere argomenti. All'interno dello script,
+gli argomenti verrano visti come variabili: $1, $2, $3 ....
+
+
+Esempio: lo script "somma", con due argomenti
+---------------------------------------------
+
+Apri il file "somma" e mettici dentro questo:
+
+	--------------
+	#!/bin/sh
+	expr $1 + $2
+	--------------
+
+Se ora fai:
+
+	# chmod +x somma	(devi farlo una sola volta)
+	# somma 2 3
+		output---> 5
+
+
+
+Altri esempi
+---------------
+
+Invece di descrivere nel dettaglio tutti i costrutti
+della shell, ho creato una directory demo/, con una
+serie di esempi.
+
+La shell, come linguaggio di programmazione, ammette
+tutti i costrutti piu' importanti (for, while, ...), ma
+non ammette vettori o array.
+
+Gli script di shell vengono usati essenzialmente per
+l'amministrazione dei sistemi UNIX, per installare pacchetti
+e per automatizzare la gestione delle varie funzionalita'
+del sistema stesso.
+
+La programmazione della shell e' descritta in molti
+buoni libri presenti in commercio. Linux segue esattamente
+lo standard UNIX. Per cui, non devi cercare Linux, ma UNIX.
+
+
+

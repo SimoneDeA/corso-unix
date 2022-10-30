@@ -1,0 +1,17 @@
+#!/bin/sh
+# demo if 
+
+
+echo "Strutture condizionali"
+
+
+read -p "Dammi un numero compreso tra 0 e 9: " n
+
+if [ $n -lt 5 ] ; then
+	echo "mi hai dato un numero minore di 5."
+else
+	echo "mi hai dato un numero maggiore o uguale a 5."
+fi
+
+echo "demo finito."
+

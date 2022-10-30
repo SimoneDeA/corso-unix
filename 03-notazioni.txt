@@ -1,0 +1,14 @@
+Notazioni
+----------
+
+Se davanti ad una riga e' presente il simbolo # (cancelletto), vuol
+dire che si tratta di un comando UNIX che potrebbe essere battuto
+sulla tastiera.
+
+Naturalmente, lo inserirai SENZA il cancelletto.
+
+Ae esempio, con la riga:
+
+		# edit prova.txt
+
+si vuol dire che devi battere il comando "edit prova.txt" 

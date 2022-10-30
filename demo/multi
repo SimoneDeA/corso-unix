@@ -1,0 +1,23 @@
+#!/bin/sh
+# demo "multi" , scelte multiple
+
+
+cat <<END
+Ti piace Linux?
+
+(puoi rispondere: molto, poco, per niente, affatto, pochino)
+
+END
+
+read -p "Ti piace Linux? " quanto
+
+case "$quanto" in
+
+molto)		echo "me ne compiaccio.";;
+poco)		echo "si, qualche volta non mi amano";;
+per*niente|affatto)	echo "ahia, mi spiace";;
+pochino)	echo "non ti sbilanci, eh? ";;
+*)
+		echo "questa risposta non la sapevo." ;;
+esac
+

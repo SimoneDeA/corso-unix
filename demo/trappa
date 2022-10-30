@@ -1,0 +1,20 @@
+#!/bin/sh
+# demo "trap" 
+
+finisci()
+{
+echo
+echo "Ahia, mi hai fatto male! "
+exit
+}
+
+trap finisci 2 
+
+# un ciclo infinito
+
+echo "premi CONTROL-C quando ti sei stancato ..."
+
+while [ 1 ] ; do 
+	echo "Sono passati $(date +%s) dal 1 Gennaio 1970 ..."
+	sleep 1
+done

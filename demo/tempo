@@ -1,0 +1,22 @@
+#!/bin/sh
+# demo date 
+
+
+
+giorno=$(date +%d)
+mancano=$(expr 31 - $giorno)
+
+natale=$( date -d "12/25" +%A)
+
+cat <<END
+Oggi e' $(date +%d) del mese $(date +%m) ( $(date +%B)). 
+Mancano $mancano giorni alla fine del mese.
+Natale, quest'anno (siamo nel $(date +%Y)), capita di $natale. 
+
+Il Natale dell'anno 2025 capitera' di $(date -d "12/25/2025" +%A),
+se ti interessa.
+
+Ehm, sono passati $(date +%s) secondi dal 1 gennaio del 1970,
+che e' l'ora zero del sistema operativo Linux.
+
+END

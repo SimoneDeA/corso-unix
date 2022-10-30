@@ -1,0 +1,84 @@
+Sostituzione di caratteri singoli
+===================================
+
+In questa lezione si impara a rimpiazzare caratteri
+da un file di input, producendo un file di output.
+
+
+Caratteri ASCII di controllo (codici escape)
+--------------------------------------------
+
+Alcuni caratteri ASCII hanno un significato speciale e vengono
+indicati nella forma \x  (col backslash).
+
+	\r	ritorno carrello (vai a capo)
+	\n	new line (nuova linea)
+	\a	bell (il terminale fa BEEP)
+	\t	tabulazione (tasto TAB)
+
+ed altri ancora.
+
+
+Rimpiazzo di singoli caratteri: comando "tr"
+--------------------------------------------
+
+Esempi:
+	(1) # cat veicoli | tr i X
+	(2) # cat veicoli | tr -d [0-9]    
+	(3) # cat veicoli | tr [a-z] [A-Z]    
+	(3) # cat veicoli | tr [ \t] X    
+
+Nell'esempio (1) lavorando in pipe, il comando "tr" spulcia
+le righe del file "veicoli" e traduce tutte le "i" in "X"
+
+In (2), cancella (-d) tutti i caratteri numerici
+In (3), mette tutto in maiuscolo 
+In (4), traduce tutti gli spazi e la tabulazione (indicata con \t) con
+una X
+
+Rimozione caratteri di fine riga
+--------------------------------
+
+Supponiamo di voler cancellare i codici escape \r e \n che
+sono presenti in fondo alle righe: 
+
+	# cat veicoli | tr -d '\r' | tr -d '\n'
+
+Come vedi, si fanno due "cicli" di lavorazione, perche' "tr" cancella
+un tipo di carattere per volta. 
+In output vedremo una sola grossa riga.
+
+
+Trasformare un file in singole parole
+-------------------------------------
+
+Parti dal file "veicoli", tanto per usare del materiale. 
+Vogliamo in output un file che abbia soltanto una parola per riga.
+
+Come prima cosa, si potrebbero sostiture tutti gli spazi e i tab con il
+carattere di andata a capo UNIX \n:
+
+	# cat veicoli | tr '[ \t]' '\n'
+
+Ma il risultato contiene troppe linee vuole. Perche'?
+Il comando corretto e':
+
+	# cat veicoli | tr -s '[ \t]' '\n'
+
+L'opzione "-s" fa si che piu' spazi attaccati vengano
+trattati come un unico spazio. 
+
+
+Ora tocca a te
+----------------
+
+- Scrivi un testo su piu' righe dove compare spesso una parola, ad esempio "cane".
+- Crea un comando per trasformalo in un file dove ogni parola e'
+  collocata su una riga a se stante.
+- fai il grep delle sole righe che contengo la parola scelta
+- effettua il conteggio di quante volte compare la parola.
+
+
+Comandi occorrenti: tr, grep, wc
+
+

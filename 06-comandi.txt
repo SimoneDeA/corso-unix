@@ -1,0 +1,106 @@
+Tipi comandi di UNIX
+=======================
+
+La lista di comandi riportata qui non e' completa. 
+Per avere una lista completa, il modo
+piu' semplice e' controllare il contenuto delle directory
+dove si trovano in genere i comandi: /bin, /sbin, /usr/bin e /usr/sbin
+
+Ad esempio:
+		# ls /bin
+
+
+Non e' completa perche', di volta in volta, io aggiungo/rimuovo altri
+comandi al sistema.
+
+Help di un comando
+------------------
+
+In genere, si ottiene l'help con lo switch --help oppure -h.
+Esempio:
+
+		# ls --help
+
+Amministrazione del filesystem
+-----------------------------
+
+	cd	(change dir) cambia directory
+	ls	(list) lista files/directory
+	mkdir	(make dir) crea directory
+	rm	(remove) cancella
+	mv	(move)  sposta e rinomina
+	cp	(copy) copia
+	find	(find) cerca files
+	cat	concatena files
+
+Cambiare i permessi di un file
+------------------------------
+
+	chmod 	(change mode)
+
+Archiviazione
+-------------
+
+	tar	(tape archiver) Mette insieme piu' files in 
+		un unico archivio (ma non comprime)
+
+Compressione
+-------------
+
+	gzip	(Gnu zip) Comprime un file (compressione lossless)
+	zip	(pkzip)   Compressore e archiviatore, origine DOS
+
+
+Estrazione informazioni da files
+---------------------------------
+
+	wc 	(word count) conteggi parole e righe
+	grep	selezione di righe in base a pattern
+	tr	(translate) rimpiazza un carattere con un altro
+	sed	(stream editor) rimpiazzia intere parole		
+	dd	estrae pezzi di un file
+	
+Editing
+--------
+
+	vi	(visual editor) Difficile da usare. Tradizionale UNIX
+	edit	Facile da usare. Aggiunto apposto per il Corso.
+
+Matematica
+-----------
+	
+	expr	semplici calcoli algebrici
+	bc	calcolatore scientifico
+
+
+Criptografia
+------------
+
+	md5sum	(Message Digest, Algorithm 5) Generazione di HASH
+	gpg	(Gnu Pretty privacy Guard)  criptografia e firma elettronica
+
+Networking
+-----------
+
+	ping	per "pingare" un computer in rete
+	telnet	per aprire una sessione su un computer remoto
+	ssh	per aprire una sessione criptata (s=secure) su un computer remoto
+	ftp	per scaricare files via FTP
+	wget	per scaricare pagine web da un computer remoto
+	curl	idem	
+
+ 
+Miscellanea
+------------
+
+	echo		stampa a video di una stringa
+	date		data corrente
+	du		(disk usage) Informazione sullo stato dei dischi
+	df		Informazione sui punti di montaggio dei dischi
+	mount
+	umount		Montaggio e smantaggio dischi (avanzato)
+	dirname		estrare la parte "directory" da un file assoluto	
+	basename	estrane la parte "file" da un file assoluto
+
+
+Altri che mi sono dimenticato di menzionare.

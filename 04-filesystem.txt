@@ -1,0 +1,102 @@
+Struttura di un filesystem UNIX
+===============================
+
+
+Stuttura gerarchica
+--------------------
+
+I dischi UNIX sono organizzati in una struttura
+gerarchica di directory, esattamente come DOS/WIN
+
+Eccone un esempio
+.
+|-- bin
+|-- etc
+|   |-- cron
+|   `-- ppp
+|-- home
+|   |-- paperino
+|   |-- pippo
+|   `-- pluto
+|-- lib
+|-- sbin
+`-- usr
+    |-- bin
+    |-- doc
+    |-- lib
+    `-- sbin
+
+
+La directory /bin (binary) contiene comandi eseguibili, ad esempio.
+La directory /sbin (system binary) contiene comandi per l'amministrazione
+del sistema.
+/home contiene i dati dei singoli utenti.
+/usr/bin e /usr/sbin contengono i comandi accessibili a tutti gli utenti,
+e non solo all'amministratore, etc etc.
+
+/lib contiene le librerie dinamiche; /usr/doc la documentazione, etc.
+
+
+
+Nome completo (o assoluto) di un file 
+----------------------------
+
+Il nome completo di un file deve specificare l'intero
+percorso (path) che conduce fino al file stesso, a partire
+dalla "radice" (root) che viene indicata con /.
+Esempi:
+
+	/home/paperino/immagini/auto.jpg
+	/bin/ls
+	... etc  ..
+
+Nel Dos invece che / (slash) si usa \ (backslash); la root viene
+invece indicata col nome del disco:   C:, D:, A:, etc
+
+Nella notazione del DOS scriveremmo per gli stessi files:
+
+	c:\home\paperino\immagini\auto.jpg
+	... etc ...
+
+Nome relativo di un file
+------------------------
+
+Relativo significa "relativo alla directory corrente".
+Un nome come  "auto.jpg", si riferisce ad un file
+presente nella directory in cui mi trovo (e potrebbe quindi non esistere)
+
+
+"Parte directory" e "parte file" di un file assoluto
+------------------------------------------------------
+
+In un file assoluto come /home/paperino/immagini/auto.jpg, la 
+parte directory e' "/home/paperino/immagini/" e la parte file e' auto.jpg
+
+Possono essere estratte con i comandi "dirname" e "basename".
+
+
+Navigare nell'albero delle directory
+-------------------------------------
+
+Per questo esiste il comando "cd" (change directory), che si usa come
+l'analogo del DOS.
+
+Esempio:
+
+		# cd /home/paolo
+
+ci porta, come directory corrente, nella directory /home/paolo
+
+
+Se vogliamo salire di un livello di directory, basta scrivere:
+
+		# cd ..
+
+".." e' un nome di directory speciale: simboleggia sempre la
+directory piu' in alto rispetto a quella dove ci troviamo.
+
+
+
+
+	
+

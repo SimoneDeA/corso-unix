@@ -1,0 +1,18 @@
+#!/bin/sh
+# conteggi inferno.txt 
+
+
+
+l=$(cat comedia.txt | wc -l)
+c=$(cat comedia.txt | wc -c)
+w=$(cat comedia.txt | wc -w)
+
+cat <<END
+
+La Divina Commedia di Dante Alighieri contiente 
+esattamente $c bytes, corrispondenti a $w parole,
+distribute su $l versi.
+
+Tutti eccellenti :-)
+END
+

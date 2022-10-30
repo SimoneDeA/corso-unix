@@ -1,0 +1,89 @@
+Estensione dei files
+=======================
+
+Come sapete, nella convenzione DOS i files hanno una 
+parte "nome" e una parte "estensione" di tre caratteri,
+che segue il punto ".". Esempi:
+
+	pippo.jpg
+	nota.txt
+	.....
+
+Il DOS tratta in maniera piuttosto diversa le due parti.
+
+In Linux e' diverso. Il punto e' considerato un carattere
+come gli altri.
+
+Possiamo ancora chiamare "estensione" quello che viene dopo
+il punto, ma per Linux essa non ha un significato
+particolare. Serve giusto a noi, per identificare facilmente
+il contenuto del file  stesso.
+
+Ne consegue, che l'estensione in Linux non e' limitata a 3
+caratteri. Esempi:
+
+	fire.c
+	gtk.cc
+	nota.txt
+	pipo.configurazione
+
+sono tutti nomi validi.
+
+
+Funzionamento dei wild-char
+=============================
+
+Per wild-char si intendono alcuni caratteri "jolly" che si
+possono usare per specificare i files. Funzionano il Linux
+in maniera analoga al DOS.
+
+In DOS, ad esempio, si puo' scrivere:
+
+	# dir *.jpg
+
+intendendo "listami tutti i file con estenzione .jpg"
+
+Benche' il significato sia lo stesso in DOS e Linux, si 
+possono facilemente commettere errori.
+Vedi paragrafo successivo.
+
+Espansione dei wild-char
+--------------------------
+
+La shell cerca sempre di "espandere" il simbolo "*", tutte 
+le volte che e' possibile.
+
+Se io batto il comando:
+
+		# ls *
+
+e la directory corrente contiene i files "x y z", il simbolo *
+(che qui significa "tutti i files") verra espanso. Il vero
+comando che verra' eseguito sara' quindi:
+
+		# ls x y z
+
+Sta' quindi al comando "ls" capire che i tre argomenti x,y,z
+rappresentano files da listare.
+
+Ma che succede se batto:
+
+		# cp *
+
+Questo comando verra' espanso in:
+
+		# cp x y z
+
+Ora viene il bello: il comando "cp" si aspetta che l'ultimo
+argomento sia la directory dove copiare.
+Ecco perche' si arrabbiera' emettendo il misterioso 
+messaggio di errore:
+
+          cp: copying multiple files, but last argument `z' 
+		is not a directory
+
+
+
+
+
+

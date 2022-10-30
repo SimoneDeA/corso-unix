@@ -1,0 +1,45 @@
+Sostituzione di piu' caratteri
+Streaming editor (sed)
+-----------------------------
+
+
+"sed" e' un potente comando che analizza il suo input,
+effettua delle sostituzioni in base a filtri e
+produce un suo output.
+
+
+Sed: uso elementare
+----------------------
+
+Il comando "sed" ha una sintassi del tipo:
+
+		sed  "s/cosa/con/g"
+
+"s" significa "sostituisci"; "g" significa "globalmente".
+
+Esempi:	
+
+	cat veicoli | sed "s/cbr-/CBR /g"
+
+Sed: uso avanzato
+-----------------
+
+Nel fare la sostituzione, sed puo' usare parte delle stringhe
+che ha letto, se racchiuse tra  \( .... \), ponendole dove
+avete messo il segnaposto "&".
+
+
+Osservate questi criptici comandi e provate a vedere cosa fanno:
+
+	cat veicoli | sed "s/\(.\)/(&)/g"
+	cat veicoli | sed "s/\([0-9]\)/00&/g"
+	cat veicoli | sed "s/\(.\)$/& -fine/g"
+	cat veicoli | sed "s/\( +\)$/-/g"
+
+
+Prova anche questi, su qualche file
+
+	sed "s/aab/ab/g"
+	sed "s/pier\(.\)/Pier&/g"
+	sed "s/mi chiamo \(.+\)/si chiama &/g"
+

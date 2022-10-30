@@ -1,0 +1,78 @@
+CODICI ESCAPE
+===========================
+
+Come sai, alcuni dei caratteri della tabella ASCII
+non sono stampabili e rappresentano "codici di controllo"
+
+
+Caratteri ASCII di controllo (codici escape)
+--------------------------------------------
+
+I codici escape vengono indicati nella forma \x  (col backslash).
+Eccone alcuni:
+
+	\r	ritorno carrello (CR, vai a capo)
+	\n	new line (NL, nuova linea)
+	\a	bell (il terminale fa BEEP)
+	\t	tabulazione (tasto TAB)
+
+ed altri ancora.
+
+
+I piu' imporanti sono, effettivamente,
+
+	\n	ottale(12), decimale(10)
+	\r	ottale(15), decimale(13)
+
+Formato dei file di testo
+------------------------------------------
+
+DOS e UNIX utilizzano, purtroppo, una sintassi diversa per
+segnare la posizione dove la riga e' finisce.
+
+Entrambi lo fanno, comunque, inserendo in fondo alla riga
+dei codici escape, i quali non si vedono, ma che le stampanti
+o i terminali sanno interpretare come "andata a capo".
+
+Come fa il DOS
+--------------
+
+Il DOS, in fondo alla riga, inserisce la coppia "\n\r".
+Quindi, ben due caratteri.
+
+	\n "ruota il rullo" di una  posizione in avanti
+	\r ritorno a capo del carrello
+
+Effettivamente, se pensiamo a come funzionavano le
+macchine da scrive, le due operazioni servivano a preparare
+la stampa della riga successiva.
+
+
+Come fa UNIX
+---------------
+
+Purtroppo, UNIX aggiunge solo "\n", e questo effettivamente
+e' un po' illogico.
+Forse la scelta fu fatta per risparmiare un byte ad ogni riga, dato
+che i due compaiono sempre insieme.
+
+
+Conseguenze
+------------
+
+Se scriviamo un file sotto UNIX e poi pretendiamo di vederlo sotto DOS,
+dato che il DOS non trova lo \r, ci appare come una sola grossa riga :-(
+
+Se scriviamo il file sotto DOS e lo vediamo sotto UNIX, i caratteri
+spuri \r vengono mostrati da UNIX in fondo ad ogni riga nella forma ^M.
+Molto spiacevole.
+
+Soluzione
+------------
+
+Esistono due programmi unix2dos e dos2unix che fanno 
+la conversione.
+
+
+
+

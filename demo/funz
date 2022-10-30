@@ -1,0 +1,25 @@
+#!/bin/sh
+# demo: funzioni
+
+
+f()
+{
+echo "Mi hai passato questi argomenti: $*"
+echo "Erano in tutto $# argomenti."
+echo "Il secondo era [$2]. Mi e' piaciuto."
+echo
+echo "Sono buoni i tuoi argomenti! "
+
+}
+
+modulo()
+{
+expr $1 % $2
+}
+
+
+clear
+f 1 ciao 4 -b
+
+echo "25 mod 3 fa $(modulo 25 3). Cosi', tanto per dire."
+echo "Ieri era [ $(date -d "yesterday") ]."

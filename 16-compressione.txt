@@ -1,0 +1,76 @@
+Compressione di un file
+Comando GZIP
+===========================
+
+gzip comprime solo files e non directory.
+Ecco perche' per comprimere una intera directory, prima
+la archiviamo in un singolo file (con TAR) e poi 
+comprimiamo il risultato ottenuto.
+
+
+Uso di gzip su un file x
+------------------------
+
+	#  gzip x
+
+Ora nella directory avremo sia "x" che "x.gz", la versione
+compressa.
+L'estensione .gz e' aggiunta automaticamente dal programma.
+
+
+Comprimere una directory
+------------------------
+
+	# tar -cf tutta.tar /usr
+	# gzip tutta.tar
+
+Cosa abbiamo ora nella directory? L'archivio non compresso tutta.tar
+e il nuovo archivio compresso: tutta.tar.gz.
+
+Spesso, per comodita', questo tipo di archivio viene rinominato:
+
+	# mv tutta.tar.gz tutta.tgz
+
+in modo che l'estensione "tgz" stia per "tar.gz".
+
+E' questa la forma piu' comune con cui si distribuiscono 
+i programmi in Internet.
+
+Lavorare con archivi compressi TGZ
+------------------------------------
+
+Per poter listare il contenuto del file x.tgz dovremmo prima decomprimerlo;
+lo stesso anche per estrarne il contenuto.
+In sostanza, dovremmo fare il processo inverso: 
+
+	creazione TGZ :   archiviazione, compressione
+	apertura TGZ  :	  decompressione, dearchiviazione
+
+Per fortuna, il comando "tar" ha l'opzione "-z" che gli permette
+di decomprimere "al volo".
+
+Quindi:
+		# tar -ztf tutta.tgz   (lista)
+		# tar -zxf tutta.tgz	(estrazione)
+
+
+
+Altri compressori, non presenti in questo sistema
+--------------------------------------------------
+
+Ve ne sono tantissimi e tutti usano variante dello
+stesso algoritmo LZH.
+Il piu' antico di tutti e' "compress". Il piu' potente e' bzip2.
+UPX e' molto potente ma comprime solo gli eseguibili.
+
+Cercali su internet.
+
+
+Ora tocca a te
+----------------
+
+Crea un directory nuova nella tua area di lavoro.
+Copiaci dentro altri files o directories.
+Produci un archivio TGZ di questa directory.
+
+

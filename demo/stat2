@@ -1,0 +1,26 @@
+#!/bin/sh
+# demo conteggi statistici , livello char
+
+
+# Questo programma analizza il Canto I dell'Inferno
+# di Dante ed effettua il conteggio dei caratteri
+
+# Ottimo esempio dell'uso delle pipes
+
+cat comedia.txt |
+tr  '[a-z]' '[A-Z]'  |		# metti in maiuscolo 
+sed "s/\(.\)/&%/g"  |		# trasforma x in x%
+tr  -s % '\n'  |			# trasforma % in \n 
+sort	|			# ordine alfabeticamente
+uniq -c |			# conta le righe uguali	
+sort -nr > /tmp/s 		# nuovo sort, numerico (-n), in ordine inverso (-r)
+
+
+# estrai solo le prime 27 righe
+cat /tmp/s | head -27
+
+
+# Note: 
+# tr -c significa "complementa"
+# tr -s significa "caratteri ripetuti, visti come uno solo"
+# uniq -c signica "rendi le righe uniche, ma conta le uguali" 

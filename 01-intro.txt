@@ -1,0 +1,87 @@
+Corso Base di UNIX per studenti
+delle scuole superiori
+================================
+(C) 2002 Michele Andreoli
+
+
+Scopo del Corso
+----------------
+
+Cosi' come studiamo la Storia antica per capire meglio
+la Storia Moderna, e' giusto studiare il sistema operativo UNIX,
+pilastro fondamentale della storia dell'informatica.
+
+Inoltre, si va diffondendo sempre piu' nel mondo una
+moderna incarnazione di UNIX, chiamata Linux: un sistema distribuito
+gratis e sviluppato in maniera collaborativa da persone
+di varie parti del mondo, che si tengono in contatto grazie
+ad Internet.
+
+La conoscenza di Linux puo' fornirti una possibilita'
+in piu' nell'affrontare il mondo del lavoro, oltre ad
+essere una valida esperienza culturale.
+
+
+I compenenti di un sistema Linux
+--------------------------------
+
+Linux e' un "sistema operativo" (OS, Operating System) per
+Personal Computers (PC), basato sulla struttura e sulla filosofia
+del originale sistema UNIX, sviluppato al MIT negli anni 60/70.
+
+Linux e' stato creato dallo studente finlandese Linux Torvalds,
+intorno al 1993.
+
+Esso si compone da:
+
+	1) un "kernel":  il cuore del sistema e che
+	   gestisce le periferiche del computer.
+	2) una "shell": l'interprete a linea di comando,
+	   che permette l'uso interattivo del sistema (copiare files,
+	   cancellare, editare, etc)
+	3) un "server grafico": un programma per accedere alla
+	   scheda grafica e disegnare finestre, bottoni, etc.
+	   (denominato "XWindow"). 
+	4) un "Window Manager": il programma che gestisce le finestre
+	   e quindi il "desktop" (la scrivania). I due desktop piu'
+	   in voga al momento sono KDE (sponsorizzato dal governo
+	   tedesco) e GNOME.
+	6) una "distribuzione": cioe' un confezionamento su CD-ROM,
+	   con manuali, pacco, etc (RedHat, Debian, Caldera, Mandrake ...)
+
+
+
+La versione di Linux  che stai usando
+-------------------------------------
+
+Il Linux  che useremo per il Corso non e' un vero Linux,
+ma un semplice "emulatore Linux per windows" chiamato CygWin.
+
+Esso e' solo un rudimentale sottoinsieme del
+sistema operativo LINUX. In tutto, una 15-ina di comandi.
+
+Non ti aspettare quindi bottoni, finestre e giochi.
+
+Un Linux completo, ovviamente, *ha* tutto questo e anche di
+piu': interfaccia grafica, manualistica, giochi, grafica e suoni, etc.
+
+Tieni presenti che Linux viene distribuito ormai su 5-6 CD-ROM
+e che la quantita' di software disponibile e' immensa
+
+Per ora, ci limiteremo a scoprire "il cuore" del sistema,
+utilizzando l'interfaccia a caratteri, la cosiddetta "console".
+
+Ulteriore documentazione
+-------------------------
+
+Un buon punto di partenza su Linux in Italia e' il sito www.linux.it.
+
+Aggiornamenti di questo software
+-------------------------------
+
+Puoi scaricare una nuova versione della RusticShell da questo
+sito:
+
+		http://mulinux.sunsite.dk/mu/rs/
+
+

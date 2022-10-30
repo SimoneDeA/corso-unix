@@ -1,0 +1,62 @@
+gpg: parte I
+Cifratura simmetrica
+=============================
+
+
+gpg e PGP
+------------------
+
+In questo corso non useremo "pgp" (Pretty Good Privacy, di P. Zimmerman),
+perche' non e' software libero.
+
+Useremo invece "gpg" (GNU Privacy Guard), che ha le stesse
+funzionalita' di PGP, senza i problemi di brevetti ad esso collegati.
+
+Notare l'inversione delle lettere tra gpg e pgp.
+Anche se dovessi usare il termine PGP mi riferiro' sempre a gpg.
+
+
+gpg si puo' usare sia con la cifratura tradizionale (simmetrica)
+che con quella moderna (asimmetrica)
+
+
+Generare le mie chiavi S e P
+---------------------------
+
+Batti:
+
+	# gpg --gen-key
+
+e segui le istruzioni. 
+Ti verra' richiesta una passphrase: TIENILA  A MENTE!
+Per questi esempi, sceglila corta, di un paio di parole.
+
+Per avere la lista delle tue chiavi, batti:
+
+	# gpg --list-keys
+
+
+Cifratura tradizionale (simmetrica)
+-------------------------------------
+
+Supponiamo di avere un file xyz e di volerlo cifrare, onde
+sia leggibile solo da noi. xyz potrebbe ad esempio contenere
+lettere che compromettono, o la nostra vera pagella :-)
+
+Il comando:
+
+	# gpg -c xyz
+
+produrra il file xyz.gpg, mantenendo l'originale, che
+possiamo anche cancellare.
+
+Solo noi potremo decifrare il file, perche' solo noi
+sappiamo la passphrase e abbiamo la chiave segreta.
+
+La cifratura tradizionale e' quindi utile quando l'obbiettivo
+non e' "lo scambio" di informazioni sicure, ma
+"l'archiviazione sicura".
+
+
+
+

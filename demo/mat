@@ -1,0 +1,18 @@
+#!/bin/sh
+# programma dimostrativo
+# sugli script di shell in Linux
+# scritto da M.Andreoli, (C)2002
+
+
+#----------------------
+# Calcoli numerici
+#----------------------
+
+read -p "Dammi un numero: " x
+read -p "Dammene un altro: " y
+echo "La somma di $x e di $y fa, guarda caso, $(expr $x + $y)." 
+echo "La differenza di $x e di $y fa, guarda caso, $(expr $x - $y)." 
+echo "La prodotto di $x e di $y fa, guarda caso, $(expr $x \* $y)." 
+
+
+

@@ -1,0 +1,28 @@
+#!/bin/sh
+# demo cicli 
+
+
+echo "Conteggi e Tabelle:"
+
+
+# ciclo for
+
+for i in 1 2 3 4 5 ; do
+	echo "$i	$(expr $i \* $i)"	
+done
+
+cat << END
+
+Per interrompere un programma,
+devi battere CONTROL-C
+END
+
+ 
+read -p "batti return per iniziare ..." return
+
+# un ciclo infinito
+
+while [ 1 ] ; do 
+	echo "Sono passati $(date +%s) secondi dal 1 Gennaio 1970 ..."
+	sleep 1
+done

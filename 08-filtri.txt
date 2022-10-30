@@ -1,0 +1,100 @@
+
+Filtri di ricerca
+===================================
+
+In questa lezione si imparera' ad estrarre informazioni
+da un file, sulla base di un "pattern" di ricerca.
+Soltanto le righe del file che "soddisfano il pattern" (mattern matching)
+saranno selezionate.
+
+Il comando grep
+----------------
+
+Il comando UNIX per fare questo si chiama "grep" ed ha questa sintassi:
+
+		grep [opzioni] pattern file
+
+Alcune delle opzioni sono:
+	
+	-i	ignora la differensa maiuscolo/minuscolo
+	-v 	inverti la ricerca (in output solo quelle che NON soddisfano)
+
+Simulare un DataBase
+--------------------
+
+Edita il file "veicoli" e copia all'interno le seguenti righe,
+aggiungendone altre, se vuoi (senza le righe con i puntini!)
+
+... contenuto del file "veicoli" ......
+4	renault 	laguna		france
+4	renault 	scenic		france
+2	honda 		cbr-900		japan	
+2	honda 		cbr-600		Japan	
+4	honda 		civic		japan	
+4	ferrari 	testarossa	italy	
+4	fiat 		fiat-500	italy	
+4	fiat 		fiat-600	italy	
+2	ducato 		monster		italy
+........................................
+
+
+Come si vede, si tratta di un "data base relazionale", dove ogni 
+"record" (cioe' una linea) e' composto da vari "field" (campi).
+In questo caso i campi sono: ruote/casa/modello/nazione.
+
+Metacaratteri e loro uso
+-------------------------
+
+Il pattern di ricerca viene composto mescolando caratteri
+e metacaratteri. Alcuni dei metacaratteri piu' comuni sono i seguenti:
+
+	.	un carattere qualsiasi, ma uno solo
+	.*	0,1,2,3 .... caratteri qualsiasi
+	.+	1,2,3 ... caratteri qualsiasi
+	.?	0,1 caratteri qualsiasi
+	[abcD]	solo le quattro lettere a,b,c,D 
+	[0-4]	solo i numeri compresi tra 0 e 4
+	[f-w]	le lettere comprese tra f e w
+	^	inizio riga
+	$	fine riga
+
+Esempi di pattern:
+
+		"^2.*italy"
+		"cbr-[69]"
+
+Il primo pattern seleziona le righe che "iniziano per 2, hanno un certo numero
+di caratteri, e poi la string italy"
+
+Il secondo pattern seleziona le righe che "contengo la stringa cbr- e poi
+uno dei due numeri 6 o 9".
+
+Uso di grep
+------------
+(in una riga c'e' il comando, nella successiva c'e' il risultato)
+
+# grep "cbr-6" veicoli
+
+	2	honda 		cbr-600		Japan	
+
+# grep "^4.*italy" veicoli
+
+	4	ferrari 	testarossa	italy	
+	4	fiat 		fiat-500	italy	
+	4	fiat 		fiat-600	italy	
+
+# grep "italy" veicoli 
+
+	4	ferrari 	testarossa	italy	
+	4	fiat 		fiat-500	italy	
+	4	fiat 		fiat-600	italy	
+	2	ducato 		monster		italy
+
+Tocca a te
+-----------
+
+Prova ad estrarre
+
+	- le auto "non italiane".
+	- le moto giapponesi.
+	- le auto la cui marca inizi per "f" o "t" 

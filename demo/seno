@@ -1,0 +1,15 @@
+#!/bin/bc -l
+
+
+/*
+ calcolatrice scientifica BC
+*/
+
+
+x=0.1;
+y=2*x^2+1;
+
+for (x=0.0; x<=6.28; x=x+0.4) {
+	print "sin(",x,")= ",s(x),"\n";
+}
+quit

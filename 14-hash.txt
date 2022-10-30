@@ -1,0 +1,136 @@
+Funzioni hash -- Algoritmo MD5
+==============================
+
+
+Definizione semplificata di funzione hash
+------------------------------------------
+
+Per funzione hash si intende una funzione "non
+invertibile" (one-way function), ma che possa essere
+considerata "quasi iniettiva".
+
+In sostanza, si richiede che se x1 ed x2 sono diversi,
+allora, con grande probabilita', anche hash(x1) sia diverso da 
+hash(x2).
+
+Col termine "grande probabilita'" si intende che i casi
+in cui il valore hash di due oggetti diversi coincidano
+sia un fatto raro, o comunque transcurabile.
+
+
+Message digest (riassunto di un messaggio)
+------------------------------------------
+
+L'algoritmo hash denominato MD5 (message digest number 5) e'
+disegnato per prendere in input un messaggio grande quanto
+si vuole e crearne un "riassunto" di esattamente 16 bytes
+
+In Linux e' disponibile a questo scopo il comando "md5sum".
+Sintassi:
+
+		# md5sum file1 file2 ....
+
+
+Esempio:
+
+Supponiamo di voler calcolare l'hash del file 01-intro.txt.
+Ecco cosa ottengo al momento in cui scrivo:
+
+		# md5sum 01-intro.txt
+		1761d89790dd5b8ade1054809837c821  01-intro.txt
+
+Come vedi, l'output del programma consiste in una stringa di 32
+caratteri esadecimali, formanti appunti 16 bytes, con in piu'
+il nome del file processato.
+
+
+E' possibile processare piu' files, usando l'asterisco. Esempio:
+
+		# md5sum *.exe		(processa tutti i .exe)
+		# md5sum *		(processa tutti i file in questa dir)
+		# md5sum /bin/*		(processa tutti i file in /bin)
+
+Io, per esempio, ho processato tutti gli eseguibili contenuti
+nella cartella c:\windows di Windows XP e ho trovato questo:
+
+35b2560b60d2649ead8b9d56cb3c1121 *c:/windows/IsUn0410.exe
+515e4684008e955de0c81e6a7aea1c2a *c:/windows/IsUninst.exe
+96ff03f5e325328c2b34112ee0e25705 *c:/windows/NDNuninstall4_50.exe
+205f4b55e601fd6f7be34192261587a4 *c:/windows/NSUninst.exe
+de605de82c02fa006975336cf4f71e74 *c:/windows/RSETPATH.exe
+b9917fc4c836776765e311fff84dd534 *c:/windows/Setup1.exe
+536cc99602811f8c2597fabd7979610b *c:/windows/Unnero.exe
+1597bc081cd26a36d727887279429c7a *c:/windows/explorer.exe
+2acc867d1df9b41dc39d38ab3c24cf7b *c:/windows/hh.exe
+28766412898912b9452e384dae205a9c *c:/windows/iun505.exe
+bcbbce4c2209491af29dce3ee58a08a9 *c:/windows/psuninst2.exe
+b27a87f284cf79b119f8dcc43a9df9e1 *c:/windows/regedit.exe
+beda4634f0669332e25f526c870e380f *c:/windows/setdebug.exe
+f36a271706edd23c94956afb56981184 *c:/windows/twunk_16.exe
+435963f03a8d6d022a258b63176dc612 *c:/windows/twunk_32.exe
+9ca884a033a9013ef939ff6554586200 *c:/windows/uninst.exe
+84b4f61f59a421bd85d97b35d194b42b *c:/windows/unvise32.exe
+23a458e8eb269a71a29ada0cb3e22e65 *c:/windows/unvise32qt.exe
+12e4c95eb860031602b8ecc444350e35 *c:/windows/winhelp.exe
+9f77595d57e5980765cd5cd037373490 *c:/windows/winhlp32.exe
+
+
+A cosa puo' servire?
+-----------------------
+
+ Caso 1:
+Beh, te lo puoi immaginare! Se ora un virus infettasse uno
+dei miei files eseguibili contenuti in c:\windows, rifacendo
+il check con md5sum, l'hash del file modificato sarebbe ora
+diverso, ed io potrei scoprirlo.
+
+ Caso 2:
+Nella trasmissione di un grosso file X su internet, spesso si aggiunge
+ad esso anche il file X.md5, con dentro la segnatura MD5 di X.
+Il destinatario puo' scoprire se il download ha avuto qualche
+problema, semplicemente ricalcolandolo e confrontandolo con quello
+che l'autore ha memorizzato in X.md5.
+
+
+
+Lavorare in pipe con md5sum
+---------------------------
+
+md5sum puo' lavorare anche senza avere direttamente
+il file, ma leggendolo dallo stdin. Esempi:
+
+	# echo "ciao, mondo" | md5sum
+
+Qui ha codificato la stringa "ciao, mondo".
+
+	# date | md5sum
+
+Qui ha codificato la data corrente.
+
+
+
+Ora tocca a te
+--------------
+
+P1)
+Cerca un grosso file di testo o un documento in C:
+Calcola il suo hash.
+Modifica il file anche di un solo carattere, con Word ad esempio.
+Ricalcola il nuovo hash.
+Sono diversi?
+
+P2)
+Puo' succedere che MD5 "non si accorga" di una modifica?
+Perche'?
+
+
+P3)
+
+md5sum processa solo files, le directory le salta.
+E se volessi processare *tutto* l'hardisk?
+
+Prova ad usare il comando "find" e a memorizzare la lista
+
+		# lista = $(find c:)
+		# ... e poi ..?
+

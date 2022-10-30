@@ -1,0 +1,103 @@
+gpg: parte II
+cifratura asimmetrica
+========================
+
+Per usare questo tipo di cifratura, i due
+protagonisti *devono* scambiarsi le loro 
+chiavi pubbiche P.
+
+
+Pubblicazione della chiave
+--------------------------
+
+Supponiamo che io, Michele, voglia comunicare con Karl.
+Ho bisogno della chiave pubblica di Karl.
+
+Karl dev quindi "exportare" la sua chiave in file "karl.asc"
+e spedirmela per posta elettronica.
+
+Lo stesso dovro' fare io, se voglio che lui mi risponda
+in criptato.
+
+
+Export delle chiavi
+--------------------
+
+Ecco come Karl creera' il file paolo.asc
+
+	# pgp --export -a > karl.asc
+Analogamente, io impostero':
+
+	# pgp --export -a > michele.asc
+
+Io spediro' a Karl il file michele.asc e lui spedira' a me
+il file karl.asc
+
+Osservazione
+-------------
+
+E se un intruso intercetta *proprio* queste due email?
+Poco male, per due motivi:
+
+	1) esse contengono il codice MD5 (vedi lezione su MD5).
+	   Se qualcuno tenta di modificarle, gpg se ne
+	   accorge, perche' l'hash e' diversa
+	2) l'intruso potrebbe usare le chiavi per spacciarsi
+           per Michele o Karl, questo e' vero. Ma sono solo
+	   chiavi pubbliche! Con esse si puo' si spedire, ma
+	   non si possono aprire i messaggi diretti a Michele
+	   o Karl!
+
+Import delle chiavi
+--------------------
+
+Dopo che io e Karl ci siamo spediti i due file, dobbiamo
+inserire le chiavi "amiche" nel nostro data-base:
+
+
+(Michele)	# gpg --import karl.asc
+(Karl)		# gpg --import michele.asc
+
+A questo punto, battendo "gpg --list-keys", vedremo nella lista
+le chiavi nostre e quelle del nostro amico.
+
+
+Ok, criptiamo ora ...
+---------------------
+
+Io ho nel mio data-base la chiave pubblica di Karl-Heinz Zimmer, un
+mio amico tedesco.
+Quando batto "gpg --list-keys", tra le tante righe, mi appare questa:
+
+		pub  1024D/BBE08037 2000-09-08 Karl-Heinz Zimmer <khz@snafu.de>
+
+E' di questa chiave che ho bisogno, se voglio scrivere a Karl.
+Come faro' a dire a gpg che voglio usare *proprio* questa?
+
+Semplice:
+
+		# gpg -e -r khz@snafu.de mio_file
+
+L'opzione "-e" signifa criptare (encrypt) mentre "-r khz@snafu.de" significa
+che il "recipiente" e' khz@snafu.de
+
+Verra' prodotto il file
+
+		mio_file.gpg
+
+che potro' spedire a Karl via email.
+
+Ma, posso decifrare i messaggi per Karl?
+-----------------------------------------
+
+Non ci crederai, ma nessun altro che Karl, nemmeno tu, potra piu'
+aprire il file mio_file.gpg.
+
+Quindi, se cancelli la lettera mio_file, non potrai piu'
+effettuare la decifrazione mio_file.gpg -> mio_file.
+
+Solo Karl, infatti ha la chiave segreta necessaria a farlo.
+
+
+
+

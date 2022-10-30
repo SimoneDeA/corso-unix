@@ -1,0 +1,68 @@
+Criptografia a chiave asimmetrica
+=================================
+
+
+Importanza della criptografia
+-----------------------------
+
+Nel passato, quando gli scambi di informazione procedevano
+mediante documenti cartacei, intercettare un messaggio
+era questione di spie e di intrighi internazionali che
+non toccavano le grandi masse, ma piuttosto soltanto i governi.
+
+Ai tempi nostri, dove la maggior parte delle informazioni
+vengono scambiate con mezzi elettronici, e' fin troppo facile
+intercettare o alterare i nostri dati privati, anche
+da parte di Organizzazioni con mezzi economici non eccezionali.
+
+Se un tempo la questione della sicurezza dei dati era
+materia che riguardava soprattutto gli Stati, ora riguarda
+il singolo. Ognuno di noi e' a rischio.
+
+Purtroppo pero', la criptografia non solo non e'
+incoraggiata dai governi ma, addirittura, da qualche
+parte e' ancora considerata illegale.
+
+E si puo' capire perche': la criptografia potrebbeù
+infatti essere usata dalle Organizzazioni Criminali
+per proteggere i loro traffici.
+
+Infatti: dato i codici a cifratura asimmetrica sono 
+considerati praticamente inviolabili, neanche la
+Magistratura potrebbe aprire il messaggio, senza
+possedere la chiave.
+
+
+Meccanismo di funzionamento
+----------------------------
+
+Questo tipo di cifratura si definisce "a chiave asimmetrica"
+o anche "a chiave pubblica".
+Si basa su due chiavi: una detta "pubblica" (P) , e serve per cifrare;
+l'altra e' detta "segreta" (S), e serve per decifrare.
+In simboli:
+
+			S*P = P*S = I
+
+e cioe' le due chiavi sono, in un certo senso, una l'inversa dell'altra.
+
+
+Chi vuole scrivermi, dovra' cifrare con la mia chiave P; io 
+decifrero' con la mia chiave S, nota solo a me.
+
+Una comunita' che voglia comunicare in questo modo, deve depositare
+le proprie chiavi pubbliche presso una Autorita' di Certificazione.
+
+Se voglio, percio', scrivere a Paolo devo procurami la chiave pubblica
+di Paolo e criptare con questa il messaggio.
+
+
+In passato invece si usava soltanto la "cifratura simmetrica": una
+sola chiave serviva per cifrare e decifrare.
+E' ovvio quindi che doveva essere spedita al destinatario
+con qualche altro mezzo piu' sicuro (ad esempio, a mano).
+
+
+
+
+

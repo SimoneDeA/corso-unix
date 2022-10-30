@@ -1,0 +1,47 @@
+
+Concetto di Software Libero (Free Software)
+-------------------------------------------
+
+Il software, anche se forse non ci abbiamo mai fatto caso, e'
+una delle piu' importanti "merci" del mondo moderno.
+Esso influenza la nostra vita, la sicurezza delle nostre
+comunicazioni e dei nostri dati, in fondo: la nostra liberta'.
+
+Software libero significa avere il controllo su quello che
+gira sul nostro computer; significa "poter aprire il cofano
+della nostra auto".
+
+Software libero significa avere ad disposizione "i sorgenti" dei
+programmi, non solo "l'eseguibile del programma". Significa
+poterlo modificare, poterlo redistribuire, poter contribuire
+al suo miglioramento e vedersene riconosciuto il merito.
+
+Paladino di questo modo di intendere il software e'
+Richard Stallman, ex ricecatore del MIT e fondatore del
+manifesto GNU.
+
+
+Futuro del FreeSoftware
+--------------------------
+
+Il concetto di Free Software sta' guadagnando popolarita'
+non solo tra gli appassionati (smanettoni ed hackers di vario genere)
+ma anche tra aziende ed instituzioni di vari paesi.
+
+Il governo tedesco, ad esempio, sponsorizza KDE, che e'
+un desktop manager molto amato dalla comunita' Linux.
+
+Nel parlamento europeo (ma anche in quello italiano) sono
+all'esame proposte di introduzione di Linux nella
+didattica e nelle pubbliche amministrazioni.
+
+Per quanto riguarda la ricerca universitaria (specie quella scientifica)
+Linux e' gia' presente da tempo. Perche' e' libero, perche'
+i ricercatori gia' conoscevano UNIX, perche' lo si puo' modificare
+per scopi particolari senza dover pagare diritti a terzi.
+
+
+
+
+
+

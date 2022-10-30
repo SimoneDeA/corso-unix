@@ -1,0 +1,59 @@
+Creazione archivi (non compressi)
+Comando TAR
+----------------------------------
+
+
+Il comando tar (tape archiver) prende come input
+una serie di files o directories e crea un unico archivio,
+in cui i files sono messi uno di seguito all'altro.
+
+La dimensione finale e' praticamente pari alla somma delle
+dimensioni. Quindi, lo scopo di tar NON e' la compressione
+dei dati.
+
+
+Creazione archivio
+-------------------------
+
+Sintassi:
+
+		# tar -cf NOME-DEL-ARCHIVIO  FILE1 FILE2 DIR1 FILE3 ...
+
+Qui la "c" dei "-cf" significa "create".
+
+
+In genere, per distinguerli, si fa in modo che il nome 
+del file archivio finisca con .tar.
+
+Esempi:
+
+
+		# tar -cf a.tar /bin /etc
+		# tar -cf b.tar /bin/*
+		# tar -cf b.tar /bin
+
+Che differenza c'e' tra il caso (2) e il caso (3)?
+
+
+Ispezionare un archivio:
+------------------------
+
+		# tar -tf a.tar
+
+Si ottiene la lista dei file contenuti.
+Il -t significa "test"
+
+
+
+Estrarre da un archivio
+-----------------------
+
+Per estrarre nella directory corrente:
+
+		# tar -xf a.tar
+
+Per estrarre nella directory /home/michele/prova
+
+		# cat -C /home/michele/prova -xf a.tar
+
+Qui -x signifca "extract".

@@ -1,0 +1,22 @@
+#!/bin/sh
+# demo conteggi statistici, livello word 
+
+
+# Questo programma analizza il Canto I dell'Inferno
+# di Dante ed effettua il conteggio delle parole
+
+# Ottimo esempio dell'uso delle pipes
+
+cat comedia.txt |
+tr -cd '[A-z \n]' |		# cancella caratteri "strani" 
+tr -s '[ ]' '\n'  |		# trasforma spazi in "andata a capo"
+tr  '[a-z]' '[A-Z]'  |		# metti in maiuscolo 
+sort	|			# ordine alfabeticamente
+uniq -c |			# conta le righe uguali	
+sort -nr 			# nuovo sort, numerico (-n), in ordine inverso (-r)
+
+
+# Note: 
+# tr -c significa "complementa"
+# tr -s significa "caratteri ripetuti, visti come uno solo"
+# uniq -c signica "rendi le righe uniche, ma conta le uguali" 

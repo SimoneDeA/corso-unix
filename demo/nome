@@ -1,0 +1,37 @@
+#!/bin/sh
+# programma dimostrativo
+# sugli script di shell in Linux
+# scritto da M.Andreoli, (C)2002
+
+
+#----------------------
+# input di stringhe
+#----------------------
+
+# La variabili "nome" conterra'
+# il nome dello studente
+
+clear
+read -p "Come ti chiami? " nome
+echo "Piacere, $nome. Io mi chiamo Linux."
+echo "Oggi e': $(date)"
+
+
+#----------------------
+# sostituzioni e sort 
+#----------------------
+
+read -p "Demo sostituzioni. Batti INVIO " return
+clear
+
+NOME1=$(   echo $nome | tr [a-z] [A-Z]        )
+NOME2=$(   echo $nome | sed "s/\(.\)/(&)/g"         )
+NOME3=$(   echo $nome | sed "s/\(.\)/&_/g"         )
+
+cat <<END
+In maiuscolo, tu ti chiami $NOME1!
+Che e' come dire $NOME2, oppure $NOME3,
+non e' cosi'? 
+
+END
+

@@ -1,0 +1,30 @@
+Archiviare e comprimere in pipe
+(Avanzato)
+=================================
+
+E' possibile usare i comandi tar e gzip
+in pipe, passandosi cioe' il materiale da
+comprimere lungo il canale di input-output.
+
+
+Es1)
+
+Qui comprimo una stringa e pongo il risultato in un file:
+
+	# echo "ciao, mondo" | gzip -c > ciao.gz
+
+Es 2)
+
+Qui suppondo di avere il file x.tgz (archivio compresso).
+
+Potrei listarlo semplicemente cosi':
+
+	# tar -ztf x.tgz
+
+Ma anche cosi':
+
+	# cat x.tgz | gzip -d | tar -tf-
+
+Questo secondo modo e' istruttivo, perche' fa vedere i tre
+cicli di lavorazione a cui e' sottoposto x.tgz:  cat lo apre
+e lo stampa; gzip lo decomprime, tar lo lista.
